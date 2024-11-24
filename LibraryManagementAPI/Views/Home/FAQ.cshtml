@@ -1,0 +1,198 @@
+﻿@{
+    ViewData["Title"] = "FAQ - Frequently Asked Questions";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LibraryManagementAPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        /* FAQ page styling */
+        .faq-section {
+            padding: 3rem 0;
+        }
+
+            .faq-section h2 {
+                font-size: 2.5rem;
+                color: #0056b3;
+                text-align: center;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+            .faq-item h4 {
+                font-size: 1.4rem;
+                color: #333;
+                font-weight: 600;
+            }
+
+            .faq-item p {
+                font-size: 1.1rem;
+                color: #555;
+                margin-top: 10px;
+                line-height: 1.6;
+            }
+
+        /* Card Styling */
+        .faq-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+            .faq-card h5 {
+                font-size: 1.3rem;
+                color: #0056b3;
+                margin-bottom: 1rem;
+            }
+
+            /* Hover effect on FAQ items */
+            .faq-card:hover {
+                box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+                transition: all 0.3s ease-in-out;
+            }
+
+        /* Accordion styles */
+        .accordion-button {
+            font-weight: 600;
+            color: #0056b3;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+        }
+
+            .accordion-button:not(.collapsed) {
+                color: #fff;
+                background-color: #0056b3;
+            }
+
+        .accordion-body {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LibraryManagementAPI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- FAQ Section -->
+    <div class="container faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <!-- Accordion for FAQ -->
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is LibraryManagementAPI?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        LibraryManagementAPI is a modern solution for managing library resources, including books, student records, and borrowed materials. It streamlines library management and improves the user experience.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How can I manage my library resources?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can manage your library resources through our user-friendly interface, where you can add, edit, or delete books and student records. The platform allows you to track borrowed books, due dates, and overdue items.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Can I customize the library system?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, LibraryManagementAPI offers customization options to fit the specific needs of your library, whether it’s managing different types of resources or tailoring user permissions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How do I get support?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        If you have any questions or need assistance, you can contact our support team via email at <a href="mailto:support@librarymanagementapi.com">support@librarymanagementapi.com</a>. We are here to help!
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Is there a mobile version of LibraryManagementAPI?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Currently, LibraryManagementAPI is optimized for desktop and tablet use. However, we are actively working on a mobile version for better accessibility on the go.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

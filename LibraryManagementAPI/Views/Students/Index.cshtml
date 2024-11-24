@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LibraryManagementAPI.Models.Student>
+
+<h2 class="text-center my-5">Students List</h2>
+
+<div class="container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-auto">
+            <a asp-action="Create" class="btn btn-success btn-lg">Add New Student</a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Student Name</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentName</td>
+                    <td>@student.DOB.ToShortDateString()</td>
+                    <td>@student.Email</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@student.StudentID" class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@student.StudentID" class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LibraryManagementAPI.Models.Book>
+
+<h2 class="text-center my-5">Books List</h2>
+
+<div class="container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-auto">
+            <a asp-action="Create" class="btn btn-success btn-lg">Add New Book</a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Book Name</th>
+                <th>Author Name</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.BookName</td>
+                    <td>@book.BookAuthor</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@book.BookID" class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@book.BookID" class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

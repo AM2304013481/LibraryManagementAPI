@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LibraryManagementAPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        /* Homepage-specific styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/library.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+            .hero-section h1 {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            .hero-section p {
+                font-size: 1.5rem;
+                margin: 1rem 0;
+            }
+
+        /* Custom font style for the "About LibraryManagementAPI" heading */
+        h2 {
+            font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            color: #0056b3;
+        }
+
+        /* Cards styling for services section */
+        .service-card {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .service-card i {
+                font-size: 3rem;
+                color: #0056b3;
+            }
+
+            .service-card h4 {
+                margin-top: 15px;
+                font-size: 1.5rem;
+                color: #333;
+            }
+
+            .service-card p {
+                font-size: 1rem;
+                color: #777;
+            }
+
+        .cta-section {
+            background-color: #f7f7f7;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+            .cta-section h3 {
+                font-size: 2.5rem;
+            }
+
+            .cta-section p {
+                font-size: 1.2rem;
+                margin: 1rem 0;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LibraryManagementAPI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a> <!-- Added FAQ link -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Discover the World of Knowledge</h1>
+        <p>Your gateway to managing library resources seamlessly and efficiently.</p>
+        <a href="#services" class="btn btn-light btn-lg">Learn More</a>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container mt-5" id="services">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="service-card p-4">
+                    <i class="bi bi-bookmarks"></i>
+                    <h4>Library Management</h4>
+                    <p>Efficiently manage library resources, books, and student records with ease.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="service-card p-4">
+                    <i class="bi bi-person-lines-fill"></i>
+                    <h4>Student Tracking</h4>
+                    <p>Track student activities, borrowed books, and overdue items effortlessly.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="service-card p-4">
+                    <i class="bi bi-gear-fill"></i>
+                    <h4>Customization</h4>
+                    <p>Tailor the platform to suit your library’s specific needs and requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="cta-section">
+        <h3>Start Managing Your Library Today</h3>
+        <p>Join us to improve library efficiency, organize your resources, and enhance user experience.</p>
+        <a href="@Url.Action("Index", "Books")" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+</body>
+</html>
